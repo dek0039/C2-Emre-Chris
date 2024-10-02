@@ -25,5 +25,5 @@
 
             <br />
         @endforeach
-
+ 
 </x-layouts.app>

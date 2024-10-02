@@ -54,6 +54,12 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
 }
 
+footer {
+    background-color: #6c757d;
+    color: white;
+    padding: 2vh;
+}
+
 body {
     margin: 0;
     font-family: "Nunito", sans-serif;

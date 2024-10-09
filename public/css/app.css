@@ -55,6 +55,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 footer {
+
     background-color: #6c757d;
     color: white;
     padding: 2vh;
@@ -67,6 +68,10 @@ footer {
 .footer-element {
     text-align: center;
     align-items: center;
+}
+
+.custom-title {
+    font-size: 3rem;
 }
 
 body {

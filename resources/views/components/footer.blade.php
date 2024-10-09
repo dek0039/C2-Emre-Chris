@@ -1,13 +1,13 @@
 <footer>
   <div class="footer-element">
-  <p><b>Contact</b></p>
-  <p>Telefoon: </p>
-  <p>Email: </p>
+    <p><b>Contact</b></p>
+    <p>Telefoon: </p>
+    <p>Email: </p>
   </div>
   <div class="footer-element">
     <p><b>Social</b></p>
-    <a>Instagram</a>
-    <a>Facbook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
   </div>
   <div class="footer-element">
     <p><b>Over Ons</b></p>
@@ -17,8 +17,7 @@
   <p><b>© {{ __('misc.copyright') }}</b></p>
 </footer>
 
-
-<!-- analytics code -->
+<!-- Analytics code -->
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-30506707-1']);
@@ -33,10 +32,11 @@
     s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
 <!-- Einde analytics code -->
 
 <script language="Javascript" type="text/javascript">
   if (top.location != self.location) {
-    top.location = self.location.href
+    top.location = self.location.href;
   }
 </script>

@@ -14,8 +14,12 @@
             <x-header/>
 
             <ul class="breadcrumb">
-                <li><a href="/" title="{{ __('misc.home_alt') }}"
-                       alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a></li>
+                <li>
+                    <a href="/" title="{{ __('misc.home_alt') }}" alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a>
+                </li>
+                <li>
+                    <a href="{{ route('contact') }}" title="Contact Us" alt="Contact Us">Contact</a>
+                </li>
                 {{ $breadcrumb ?? '' }}
             </ul>
 

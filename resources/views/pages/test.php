@@ -17,7 +17,8 @@
             <div class="alphabet-links">
                 @foreach(range('A', 'Z') as $letter)
                     <a href="#{{ $letter }}">{{ $letter }}</a>
-                    @if (!$loop->last) 
+                    @if (!$loop->last) <!-- Check if it's not the last letter -->
+                        - <!-- Add a dash if it's not the last letter -->
                     @endif
                 @endforeach
             </div>
@@ -28,7 +29,8 @@
     $chunk_size = ceil($size / $columns);
     ?>
 
-<div class="container">
+    <div class="container">
+        <!-- Example row of columns -->
         <div class="row">
 
             @foreach($brands->chunk($chunk_size) as $chunk)
@@ -41,10 +43,9 @@
                             $current_first_letter = strtoupper(substr($brand->name, 0, 1));
 
                             if (!isset($header_first_letter) || (isset($header_first_letter) && $current_first_letter != $header_first_letter)) {
-                                // Add an ID for the letter section
                                 echo '</ul>
-                                    <h2 id="' . $current_first_letter . '">' . $current_first_letter . '</h2>
-                                    <ul>';
+						<h2>' . $current_first_letter . '</h2>
+						<ul>';
                             }
                             $header_first_letter = $current_first_letter
                             ?>
@@ -64,4 +65,4 @@
         </div>
 
     </div>
-</x-layouts.app>
+</x-layouts.app>  can you make it

@@ -18,6 +18,5 @@ class BrandController extends Controller
             "brand" => $brand,
             "manuals" => $manuals
         ]);
-
     }
 }

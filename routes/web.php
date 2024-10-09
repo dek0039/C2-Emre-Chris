@@ -58,4 +58,3 @@ Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 's
 Route::get('/generateSitemap/', [SitemapController::class, 'generate']);
 
 Route::view('/contact', 'pages.contact')->name('contact');
-

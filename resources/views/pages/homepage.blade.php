@@ -12,7 +12,6 @@
         </x-slot:title>
     </h1>
 
-
     <h1>
     {{ __('misc.most_popular_manuals') }}
     </h1>

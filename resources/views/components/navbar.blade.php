@@ -2,6 +2,8 @@
     <div class="container">
         <div class="navbar-header mr-auto">
             <a class="navbar-brand" href="/" title="{{ __('misc.home_alt') }}">{{ __('misc.homepage_title') }}</a>
+            <a href="{{ route('change.locale', ['language_slug' => 'en']) }}">English</a> |
+            <a href="{{ route('change.locale', ['language_slug' => 'nl']) }}">Dutch</a>
         </div>
         <div id="navbar" class="form-inline">
 

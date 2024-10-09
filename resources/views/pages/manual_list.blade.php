@@ -14,17 +14,21 @@
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
 
-        @foreach ($manuals as $manual)
+    @foreach ($manuals as $manual)
 
-            @if ($manual->locally_available)
-                <a class="btn btn-primary" href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
-                ({{$manual->filesize_human_readable}})
-            @else
-                <a href="{{ $manual->url }}" class="btn btn-primary" target="new" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
-            @endif
+    @if ($manual->locally_available)
+    <a class="btn btn-primary" href="{{ route('track', $manual->id) }}" alt="{{ $manual->name }}" title="{{ $manual->name }}">
+        {{ $manual->name }}
+    </a>
 
-            <br>
-            <br>
-        @endforeach
- 
+    ({{$manual->filesize_human_readable}})
+    @else
+    <a class="btn btn-primary" href="{{ route('track', $manual->id) }}" target="new" alt="{{ $manual->name }}" title="{{ $manual->name }}">
+        {{ $manual->name }}
+    </a>
+    @endif
+    <br>
+    <br>
+    @endforeach
+
 </x-layouts.app>

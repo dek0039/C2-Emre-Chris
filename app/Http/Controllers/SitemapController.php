@@ -13,6 +13,7 @@ class SitemapController extends Controller
     public function generate()
     {
 
+        dd();
         $sitemap = App::make("sitemap");
 
 

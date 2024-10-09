@@ -26,6 +26,7 @@ Productcat:		/category/12/Computers/
 */
 
 use App\Models\Brand;
+use App\Models\Manual;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\TypeController;
@@ -33,12 +34,26 @@ use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\ManualTicker;
 
 // Homepage
 Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
-    return view('pages.homepage', compact('brands'));
+
+    $manuals = Manual::orderBy('visits', 'desc')
+    ->take(10)
+    ->get()
+    ->map(function ($manual) {
+        // Fetch and add the brand name to each manual by accessing the related brand
+        $manual->brand_name = Brand::find($manual->brand_id)->name;
+        return $manual;
+    })
+    ->toArray();
+    
+    return view('pages.homepage', compact('brands', "manuals"));
 })->name('home');
+
+Route::get('/manual/track/{manual_id}', [ManualController::class, 'addClick'])->name('track');
 
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
